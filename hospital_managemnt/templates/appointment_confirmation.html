@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h2>Appointment Confirmed</h2>
+  <p>
+    Thank you for scheduling an appointment with {{ appointment.doctor.d_name }}
+    in the {{ appointment.department.department }} department.
+  </p>
+  <p>
+    Your appointment is scheduled for {{
+    appointment.appointment_date.s_date|date:"F j, Y" }} at {{
+    appointment.appointment_time }}.
+  </p>
+  <p>We look forward to seeing you soon.</p>
+  <p><strong>Appointment Details:</strong></p>
+  <ul>
+    <li><strong>Patient Name:</strong> {{ appointment.patient_name }}</li>
+    <li>
+      <strong>Department:</strong> {{ appointment.department.department }}
+    </li>
+    <li><strong>Doctor:</strong> {{ appointment.doctor.d_name }}</li>
+    <li><strong>Date:</strong> {{ appointment.appointment_date.s_date }}</li>
+    <li><strong>Time:</strong> {{ appointment.appointment_time.slot1 }}</li>
+  </ul>
+</div>
+{% endblock %}
+
+<!-- {% extends 'base.html' %} {% block content %}
+<h2>Appointment Confirmed</h2>
+<p>
+  Thank you for scheduling an appointment with {{ appointment.doctor.d_name }}
+  in the {{ appointment.department.department }} department.
+</p>
+<p>
+  Your appointment is scheduled for {{
+  appointment.appointment_date.s_date|date:"F j, Y" }} at {{
+  appointment.appointment_time }}.
+</p>
+<p>We look forward to seeing you soon.</p>
+{% endblock %} -->
+
+<!-- {% extends 'base.html' %} {% block content %}
+<h1>Appointment Confirmation</h1>
+<p>
+  Your appointment has been booked for {{ appointment.date }} with {{
+  appointment.doctor.name }}.
+</p>
+{% endblock %} -->

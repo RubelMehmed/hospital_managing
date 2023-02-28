@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Schedule - {{ doctor.d_name }}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for schedule in schedules %}
+    <tr>
+      <td>{{ schedule.s_date }}</td>
+      <td>10 AM</td>
+      <td>{{ schedule.slot1 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

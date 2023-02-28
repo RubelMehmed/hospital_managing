@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ departments.department }} Doctors</h1>
+<hr />
+<ul>
+  {% for doctor in doctors %}
+  <li><a href="{% url 'schedule' doctor.id %}">{{ doctor.d_name }}</a></li>
+  {% empty %}
+  <li>No doctors available</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+<!-- {% extends 'base.html' %} {% block content %}
+<h1>Doctors - {{ department.department }}</h1>
+<ul>
+  {% for doctor in doctors %}
+  <li>
+    <a href="{% url 'schedule_list' doctor_id=doctor.pk %}"
+      >{{ doctor.d_name }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %} -->
+
+<!-- {% extends 'base.html' %} {% block content %}
+<h1>{{ department.name }} Doctors</h1>
+<ul>
+  {% for doctor in doctors %}
+  <li>
+    <a href="{% url 'schedule' doctor_id=doctor.id %}">{{ doctor.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %} -->

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Departments</h1>
+<hr />
+<ul>
+  {% for department in departments %}
+  <li>
+    <a href="{% url 'doctor_list' department.id %}"
+      >{{ department.department }}</a
+    >
+  </li>
+  {% empty %}
+  <li>No departments available</li>
+  {% endfor %}
+</ul>
+{% endblock %}
